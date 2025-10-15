@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>CardioSense</title>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
 </head>
+
 <body>
-    <h1>WELCOME TO CardioSense!!</h1>
+    <div class="home-page">
+        <div class="background"></div>
+        <div class="input-container">
+            <form>
+                <p>Gender</p>
+                <input type="radio" name="Gender" value="Male"> Male
+                <input type="radio" name="Gender" value="Female"> Female
+                <br><br>
+
+                <input type="number" placeholder="Enter Annual-Family-Income"><br><br>
+                <input type="number" step="0.01" placeholder="Enter Ratio-Family-Income-Poverty"><br><br>
+                <input type="number" placeholder="Enter X60-sec-pulse"><br><br>
+                <input type="number" placeholder="Enter White-Blood-Cells"><br><br>
+                <input type="number" placeholder="Enter Lymphocyte"><br><br>
+                <input type="number" placeholder="Enter Eosinophils"><br><br>
+                <input type="number" placeholder="Enter Red-Blood-Cells"><br><br>
+                <input type="number" placeholder="Enter Hemoglobin"><br><br>
+                <input type="number" placeholder="Enter Mean-Cell-Vol"><br><br>
+                <input type="number" placeholder="Enter Mean-Cell-Hgb-Conc."><br><br>
+                <input type="number" placeholder="Enter Mean-cell-Hemoglobin"><br><br>
+                <input type="number" placeholder="Enter Platelet-count"><br><br>
+                <input type="number" placeholder="Enter Segmented-Neutrophils"><br><br>
+                <input type="number" placeholder="Enter ALP"><br><br>
+                <input type="number" placeholder="Enter Cholesterol"><br><br>
+                <input type="number" placeholder="Enter GGT"><br><br>
+                <input type="number" placeholder="Enter Iron"><br><br>
+                <input type="number" placeholder="Enter Protein"><br><br>
+                <input type="number" placeholder="Enter Uric.Acid"><br><br>
+                <input type="number" placeholder="Enter Triglycerides"><br><br>
+                <input type="number" placeholder="Enter Total-Cholesterol"><br><br>
+                <input type="number" placeholder="Enter Glycohemoglobin"><br><br>
+                <input type="number" step="0.1" placeholder="Enter BMI"><br><br>
+
+                <p>Vigorous-work:</p>
+                <input type="radio" name="Vigorous-work" value="Yes"> Yes
+                <input type="radio" name="Vigorous-work" value="No"> No
+                <br><br>
+
+                <p>Moderate-work:</p>
+                <input type="radio" name="Moderate-work" value="Yes"> Yes
+                <input type="radio" name="Moderate-work" value="No"> No
+                <br><br>
+
+                <p>Health-Insurance:</p>
+                <input type="radio" name="Health-Insurance" value="Yes"> Yes
+                <input type="radio" name="Health-Insurance" value="No"> No
+                <br><br>
+
+                <p>Blood-Rel-Diabetes:</p>
+                <input type="radio" name="Blood-Rel-Diabetes" value="Yes"> Yes
+                <input type="radio" name="Blood-Rel-Diabetes" value="No"> No
+                <br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
