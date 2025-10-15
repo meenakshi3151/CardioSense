@@ -1,3 +1,134 @@
-body{
-    background-color: white;
+/* Import a clean Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full-screen background with a gradient */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #74ABE2, #5563DE, #A16AE8);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container box for the form */
+.input-container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.input-container:hover {
+  transform: scale(1.01);
+}
+
+/* Title styling */
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* Group containers */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+/* Labels */
+.input-label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: #ffb703;
+  transform: scale(1.2);
+}
+
+/* Grid layout for input fields */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input styling */
+.input-field {
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Submit button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #ff8c00, #ff3d77);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #ff3d77, #ff8c00);
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-title {
+    font-size: 1.4rem;
+  }
+
+  .input-container {
+    padding: 1.2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 }

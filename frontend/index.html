@@ -1,12 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>CardioSense</title>
 </head>
+
 <body>
-    <h1>WELCOME TO CardioSense!!</h1>
+    <div class="home-page">
+        <div class="background"></div>
+        <div class="input-container">
+            <form class="form-box">
+                <h2 class="form-title">Heart Disease Prediction Form</h2>
+
+                <div class="input-group">
+                    <p class="input-label">Gender</p>
+                    <div class="radio-group">
+                        <input type="radio" name="Gender" value="Male" id="male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="Gender" value="Female" id="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <input type="number" placeholder="Annual-Family-Income" class="input-field">
+                    <input type="number" step="0.01" placeholder="Ratio-Family-Income-Poverty" class="input-field">
+                    <input type="number" placeholder="X60-sec-pulse" class="input-field">
+                    <input type="number" placeholder="White-Blood-Cells" class="input-field">
+                    <input type="number" placeholder="Lymphocyte" class="input-field">
+                    <input type="number" placeholder="Eosinophils" class="input-field">
+                    <input type="number" placeholder="Red-Blood-Cells" class="input-field">
+                    <input type="number" placeholder="Hemoglobin" class="input-field">
+                    <input type="number" placeholder="Mean-Cell-Vol" class="input-field">
+                    <input type="number" placeholder="Mean-Cell-Hgb-Conc." class="input-field">
+                    <input type="number" placeholder="Mean-cell-Hemoglobin" class="input-field">
+                    <input type="number" placeholder="Platelet-count" class="input-field">
+                    <input type="number" placeholder="Segmented-Neutrophils" class="input-field">
+                    <input type="number" placeholder="ALP" class="input-field">
+                    <input type="number" placeholder="Cholesterol" class="input-field">
+                    <input type="number" placeholder="GGT" class="input-field">
+                    <input type="number" placeholder="Iron" class="input-field">
+                    <input type="number" placeholder="Protein" class="input-field">
+                    <input type="number" placeholder="Uric.Acid" class="input-field">
+                    <input type="number" placeholder="Triglycerides" class="input-field">
+                    <input type="number" placeholder="Total-Cholesterol" class="input-field">
+                    <input type="number" placeholder="Glycohemoglobin" class="input-field">
+                    <input type="number" step="0.1" placeholder="BMI" class="input-field">
+                </div>
+
+                <div class="input-group">
+                    <p class="input-label">Vigorous-work</p>
+                    <div class="radio-group">
+                        <input type="radio" name="Vigorous-work" value="Yes" id="vig-yes">
+                        <label for="vig-yes">Yes</label>
+                        <input type="radio" name="Vigorous-work" value="No" id="vig-no">
+                        <label for="vig-no">No</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <p class="input-label">Moderate-work</p>
+                    <div class="radio-group">
+                        <input type="radio" name="Moderate-work" value="Yes" id="mod-yes">
+                        <label for="mod-yes">Yes</label>
+                        <input type="radio" name="Moderate-work" value="No" id="mod-no">
+                        <label for="mod-no">No</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <p class="input-label">Health-Insurance</p>
+                    <div class="radio-group">
+                        <input type="radio" name="Health-Insurance" value="Yes" id="hi-yes">
+                        <label for="hi-yes">Yes</label>
+                        <input type="radio" name="Health-Insurance" value="No" id="hi-no">
+                        <label for="hi-no">No</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <p class="input-label">Blood-Rel-Diabetes</p>
+                    <div class="radio-group">
+                        <input type="radio" name="Blood-Rel-Diabetes" value="Yes" id="brd-yes">
+                        <label for="brd-yes">Yes</label>
+                        <input type="radio" name="Blood-Rel-Diabetes" value="No" id="brd-no">
+                        <label for="brd-no">No</label>
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
