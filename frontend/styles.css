@@ -1,4 +1,3 @@
-/* Import a clean Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -8,16 +7,45 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Full-screen background with a gradient */
+/* Full-screen animated gradient background */
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #74ABE2, #5563DE, #A16AE8);
-  background-size: 300% 300%;
-  animation: gradientFlow 8s ease infinite;
-}
+    min-height: 100vh; /* ✅ allows scrolling beyond viewport */
+    display: flex;
+    align-items: flex-start; /* ✅ start at top */
+    justify-content: center;
+    background: linear-gradient(135deg, #74ABE2, #5563DE, #A16AE8);
+    background-size: 300% 300%;
+    animation: gradientFlow 8s ease infinite;
+    overflow-y: auto; /* ✅ allows scrolling */
+    padding: 2rem 0; /* ✅ spacing at top and bottom */
+  }
+  
+  /* Glassmorphism card container */
+  .input-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 950px;
+    color: #fff;
+    transition: transform 0.3s ease;
+    max-height: 90vh; /* ✅ prevents box overflow */
+    overflow-y: auto; /* ✅ makes inside scrollable if too long */
+  }
+  
+  /* Optional — make scrollbar look nice */
+  .input-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  .input-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+  }
+  .input-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }  
 
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
@@ -25,15 +53,14 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Container box for the form */
 .input-container {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   padding: 2rem;
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   width: 90%;
-  max-width: 900px;
+  max-width: 950px;
   color: #fff;
   transition: transform 0.3s ease;
 }
@@ -42,7 +69,6 @@ body {
   transform: scale(1.01);
 }
 
-/* Title styling */
 .form-title {
   text-align: center;
   font-size: 1.8rem;
@@ -51,54 +77,63 @@ body {
   color: #fff;
 }
 
-/* Group containers */
 .input-group {
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
-/* Labels */
 .input-label {
   font-weight: 500;
   margin-bottom: 0.3rem;
   color: #fff;
 }
 
-/* Radio buttons */
 .radio-group {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .radio-group input[type="radio"] {
   accent-color: #ffb703;
   transform: scale(1.2);
+  margin-right: 0.3rem;
 }
 
-/* Grid layout for input fields */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin: 1.2rem 0;
 }
 
-/* Input styling */
 .input-field {
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 0.9rem;
   border: none;
   border-radius: 10px;
   font-size: 0.95rem;
   outline: none;
   transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333;
+}
+
+.input-field::placeholder {
+  color: #666;
 }
 
 .input-field:focus {
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-/* Submit button */
 .submit-btn {
   display: block;
   width: 100%;
@@ -106,11 +141,12 @@ body {
   color: white;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
@@ -118,14 +154,47 @@ body {
   transform: scale(1.03);
 }
 
-/* Responsive adjustments */
+.result-box {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #d31313;
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+.result-box.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}  
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+  color: #ffb3b3;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .form-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .input-container {
     padding: 1.2rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
   }
 
   .grid-container {
