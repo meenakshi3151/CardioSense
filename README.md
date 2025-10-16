@@ -75,7 +75,9 @@ source venv/bin/activate     # On macOS/Linux
 
 # 3. Install dependencies
 pip install -r requirements.txt
-```
-The Flask server will start at http://127.0.0.1:5000 and expose the /predict API endpoint.
+
 # 4. Run the Flask backend
 python app.py
+```
+The Flask server will start at http://127.0.0.1:5000 and expose the /predict API endpoint.
+
